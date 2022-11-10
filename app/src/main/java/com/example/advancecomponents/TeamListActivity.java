@@ -23,23 +23,37 @@ public class TeamListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_list);
         getSupportActionBar().setTitle("Team List");
-        setUpTeamListButton();
-        setUpDataOfTeamList();
+        setUpTeamListAddButton();
+        setUpDeleteButton();
+        setUpTeamListData();
         handleTeamList();
     }
 
-    private void setUpTeamListButton() {
-        Button addTeamListBtn = findViewById(R.id.add_team_list_btn);
-        addTeamListBtn.setOnClickListener(view -> {
+    private void setUpDeleteButton() {
+        Button deleteBtn = findViewById(R.id.delete_btn);
+        deleteBtn.setOnClickListener(view -> {
             EditText memberNameTxt = findViewById(R.id.member_name_txt);
             String memberName = memberNameTxt.getText().toString();
-            arrayAdapter.add(memberName);
+            arrayAdapter.remove(memberName);
             arrayAdapter.notifyDataSetChanged();
             memberNameTxt.setText("");
         });
     }
 
-    private void setUpDataOfTeamList() {
+    private void setUpTeamListAddButton() {
+        Button addTeamListBtn = findViewById(R.id.add_team_list_btn);
+        addTeamListBtn.setOnClickListener(view -> {
+            EditText memberNameTxt = findViewById(R.id.member_name_txt);
+            String memberName = memberNameTxt.getText().toString();
+            if(memberName.equals("") == false) {
+                arrayAdapter.add(memberName);
+                arrayAdapter.notifyDataSetChanged();
+            }
+            memberNameTxt.setText("");
+        });
+    }
+
+    private void setUpTeamListData() {
         teamList = new ArrayList<>();
         teamList.add("Viswanath");
         teamList.add("Renuka");
@@ -49,16 +63,11 @@ public class TeamListActivity extends AppCompatActivity {
         listViewLv = findViewById(R.id.listview_lv);
         arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, teamList);
         listViewLv.setAdapter(arrayAdapter);
-        listViewLv.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int position, long l) {
-                Toast.makeText(TeamListActivity.this, "Team List : " + teamList.get(position), Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
+        listViewLv.setOnItemClickListener((adapterView, view, position, l) -> {
+            Toast.makeText(this, "Clicked : " + teamList.get(position), Toast.LENGTH_SHORT).show();
+            String memberName = teamList.get(position);
+            EditText memberNameTxt = findViewById(R.id.member_name_txt);
+            memberNameTxt.setText(memberName);
         });
     }
 }

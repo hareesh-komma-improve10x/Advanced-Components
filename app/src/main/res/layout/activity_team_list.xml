@@ -34,6 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="8dp"
             android:layout_weight="1"
+            android:backgroundTint="#38D2E6"
             android:text="Delete"
             android:textAllCaps="false" />
 
@@ -43,6 +44,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
             android:layout_weight="1"
+            android:backgroundTint="#38D2E6"
             android:text="Add"
             android:textAllCaps="false" />
     </LinearLayout>

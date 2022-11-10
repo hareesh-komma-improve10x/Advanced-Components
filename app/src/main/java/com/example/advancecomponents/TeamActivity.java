@@ -33,8 +33,10 @@ public class TeamActivity extends AppCompatActivity {
         addTeamBtn.setOnClickListener(view -> {
             EditText enterNameTxt = findViewById(R.id.enter_name_choose_txt);
             String enterName = enterNameTxt.getText().toString();
-            arrayAdapter.add(enterName);
-            arrayAdapter.notifyDataSetChanged();
+            if(enterName.equals("") == false) {
+                arrayAdapter.add(enterName);
+                arrayAdapter.notifyDataSetChanged();
+            }
             enterNameTxt.setText("");
         });
     }
