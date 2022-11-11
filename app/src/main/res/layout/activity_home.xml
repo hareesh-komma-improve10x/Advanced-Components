@@ -5,12 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".HomeActivity">
 
     <Button
         android:id="@+id/lucky_number_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="#38D2E6"
         android:text="Lucky Number"
         android:textAllCaps="false" />
 
@@ -18,6 +21,8 @@
         android:id="@+id/location_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="#38D2E6"
         android:text="Location"
         android:textAllCaps="false" />
 
@@ -25,6 +30,8 @@
         android:id="@+id/date_of_birth_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#38D2E6"
         android:text="Date of Birth"
         android:textAllCaps="false" />
 
@@ -32,6 +39,8 @@
         android:id="@+id/team_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#38D2E6"
         android:text="Team"
         android:textAllCaps="false" />
 
@@ -39,13 +48,35 @@
         android:id="@+id/team_list_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#38D2E6"
         android:text="Team List"
+        android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/contact_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#38D2E6"
+        android:text="Contacts"
         android:textAllCaps="false" />
 
     <Button
         android:id="@+id/add_members_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#38D2E6"
         android:text="Add Members"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/contacts_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:backgroundTint="#38D2E6"
+        android:text="Contacts"
+        android:textAllCaps="false" />
+
 </LinearLayout>

@@ -48,5 +48,15 @@ public class HomeActivity extends AppCompatActivity {
             Intent intent = new Intent(this, TeamListActivity.class);
             startActivity(intent);
         });
+        Button contactsBtn = findViewById(R.id.contacts_btn);
+        contactsBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ContactsActivity.class);
+            startActivity(intent);
+        });
+        Button contactBtn = findViewById(R.id.contact_btn);
+        contactBtn.setOnClickListener(view -> {
+            Intent intent = new Intent(this, ContactsActivity.class);
+            startActivity(intent);
+        });
     }
 }
